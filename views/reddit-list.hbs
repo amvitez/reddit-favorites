@@ -1,0 +1,24 @@
+<div class="row nav-container">
+<nav class="col-xs-10 col-sm-6">
+  <ul class="nav nav-pills">
+    <li role="presentation"><a href="../hot"><span class='glyphicon glyphicon-fire' alt='hot'></span> Hot 25</a></li>
+    <li role="presentation"><a href="../top"><span class='glyphicon glyphicon-thumbs-up' alt='top'></span> Top 25</a></li>
+    <li role="presentation" class="active"><a href="../favorites"><span class='glyphicon glyphicon-star' alt='star'></span> Favorites</a></li>
+  </ul>
+</nav>
+<div class="col-xs-2 col-sm-offset-4 user-display text-right"><span class='glyphicon glyphicon-user hidden-xs' alt='user'></span> {{user}} </div>
+</div>
+<div class="row">
+<a href="/logout" class="col-xs-offset-10 col-xs-2 logout text-right"><span class='glyphicon glyphicon-log-out' alt='log-out'></span><span class="hidden-xs"> Log Out</span></a>
+</div>
+<ul class="list-unstyled">
+	{{#each posts}}
+	<li class="reddit-post">
+		<div class="toggle-favorite toggle-{{data.toggle}}" data-id="{{data.id}}" data-title="{{data.title}}" data-url="{{data.url}}" data-thumbnail="{{data.thumbnail}}"><span class="glyphicon glyphicon-star{{#if data.toggle}}{{else}}-empty{{/if}}"></span></div>
+		<a href="{{data.url}}" target="_blank"><img src="{{data.thumbnail}}" alt="{{data.title}}"></a>
+		<a href="{{data.url}}" target="_blank"><p>{{data.title}}</p></a>
+		<span class="clearfix">{{data.num_comments}} comments</span>
+		<hr>
+	</li>
+	{{/each}}
+</ul>

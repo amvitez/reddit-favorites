@@ -1,0 +1,27 @@
+<div class="row nav-container">
+<nav class="col-xs-10 col-sm-6">
+  <ul class="nav nav-pills">
+    <li role="presentation"><a href="../hot"><span class='glyphicon glyphicon-fire' alt='hot'></span> Hot 25</a></li>
+    <li role="presentation"><a href="../top"><span class='glyphicon glyphicon-thumbs-up' alt='top'></span> Top 25</a></li>
+    <li role="presentation" class="active"><a href="../favorites"><span class='glyphicon glyphicon-star' alt='star'></span> Favorites</a></li>
+  </ul>
+</nav>
+<div class="col-xs-4 col-sm-offset-4 user-display text-right"><span class='glyphicon glyphicon-user' alt='user'></span> {{user}} </div>
+</div>
+<div class="row">
+<a href="/logout" class="col-xs-offset-10 col-xs-2 logout text-right"><span class='glyphicon glyphicon-log-out' alt='log-out'></span><span class="hidden-xs"> Log Out</span></a>
+</div>
+{{#if favorites.length}}
+<ul class="list-unstyled">
+	{{#each favorites}}
+	<li class="favorite-post">
+		<button data-id="{{redditID}}"><span class='glyphicon glyphicon-remove' alt='user'></span></button>
+		<a href="{{url}}" target="_blank"><img src="{{thumbnail}}" alt="{{title}}"></a>
+		<a class="clearfix" href="{{url}}" target="_blank"><p>{{title}}</p></a>
+		<hr>
+	</li>
+	{{/each}}
+</ul>
+{{else}}
+<p>You haven't found anything worthy yet!</p>
+{{/if}}
