@@ -40,7 +40,7 @@ passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
-mongoose.connect('mongodb://localhost/reddit-favorites');
+mongoose.connect('mongodb://heroku_g3g44w83:q4sme91cfc9suo4p7f9nv1gmau@ds053794.mongolab.com:53794/heroku_g3g44w83');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
