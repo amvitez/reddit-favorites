@@ -35,6 +35,16 @@ ul img{
 	margin-top:-80px;
 }
 
+.reddit-post, .favorite-post{
+  img{
+    margin-right:30px;
+  }
+
+  p{
+    margin-right:120px;
+  }
+}
+
 
 li.reddit-post{
 	div{
@@ -47,14 +57,6 @@ li.reddit-post{
 			margin-top:16px;
 			font-size:40px;
 		}
-	}
-
-	img{
-		margin-right:30px;
-	}
-
-	p{
-		margin-right:120px;
 	}
 
 }
@@ -76,10 +78,6 @@ li.favorite-post{
 		.glyphicon{
 			font-size:30px;
 		}
-	}
-
-	p{
-		margin-right:120px;
 	}
 }
 
@@ -257,9 +255,23 @@ hr{
 
 
 /* Media Queries */
-@media (max-width: 700px) {
+@media (max-width: 750px) {
     .login-body{
     	background-image:none
+    }
+
+    .reddit-post, .favorite-post{
+      img{
+        margin-right:10px;
+      }
+
+      p{
+        margin-right:60px;
+      }
+    }
+
+    .logout{
+      margin-top:-100px;
     }
 }
 

@@ -17,7 +17,7 @@ function filterThumbnail(input){
 router.get('/', function(req, res) {
   isAuthenticated = req.isAuthenticated();
 
-  if (isAuthenticated){
+  if (isAuthenticated && req.body.user && req.body.user.id){
     res.redirect('/hot');
   }
   else{
